@@ -1,0 +1,346 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resturent Website</title>
+    
+
+    <style>
+
+    body{
+    margin:0;
+    font-family:Arial;
+
+}
+
+header{
+    background:blue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    background-image:OIP (13).jpg;
+}
+
+nav a {
+    color:black;
+    margin: 10px;
+    text-decoration: none;
+    cursor:pointer;
+    background-color:White;
+}
+
+.section{
+    display:none;
+    padding:20px;
+    text-align: center;
+}
+
+.active{
+    display:block;
+}
+
+.banner{
+    background:url('food.jpg');
+    height:300px;
+    color:white;
+    text-align:center;
+    padding-top:120px;
+    font: size 30px;
+}
+
+.gallery img{
+    width:200px;
+    margin :10px;
+    gap:20px;
+    border:1 ;
+    border-radius: 15px;
+    
+
+}
+
+h1{
+    font-family: Arial;
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    margin:15px;
+}
+
+p{
+      font-family: Arial;
+    font-size: 30px;
+    margin:15px;
+}
+
+form{
+    border: 1;
+    border-radius: 15px;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+h3{
+    font-family: Arial;
+    font-size: 25px;
+    text-align: left;
+    color:Red;
+    margin:15px;
+}
+
+h2{
+    font-family: Arial;
+    font-size: 35px;
+    text-align: center;
+    color:Brown;
+    margin:15px;
+}
+
+.menu {
+        font-size: 90px;
+    }
+
+    .menu h3 {
+        font-size: 100px;
+    }
+
+</style>
+
+<!--jQuery-->
+<script src="https://code.jquery.com//jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>D & H Resturent</h1> 
+    
+        <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('menu')">Menu</a>
+        <a onclick="showPage('offers')">Offers</a>
+        <a onclick="showPage('gallery')">Gallery</a>
+        <a onclick="showPage('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <!--HOME-->
+    <div id="home" class="section active">
+        <dive class="banner">Delicious Food Everyday</dive>
+
+        <h2>Welcome</h2>
+        <p>Enjoy the best meals in town!</p> <br> <br>
+        <h2>About us</h2> <br> <br>
+
+        <p>
+
+Welcome to our restaurant, where great food, warm hospitality, and memorable experiences come together. 
+We are passionate about serving freshly prepared dishes made from high-quality ingredients, bringing authentic flavors and exceptional taste to every meal. 
+Whether you're joining us for a family gathering, a casual lunch, or a special celebration, our dedicated team is committed to providing friendly service and a welcoming atmosphere. 
+Our goal is to create a place where every guest feels at home and leaves with a smile. Thank you for choosing us.  
+</p> <br> <br>
+
+<img src="OIP (13).jpg" width="500" gap="20"> 
+<img src="home 2.jpg" width="500" gap="20">
+    </div>
+
+    <!--MENU(AJAX)-->
+    <div id="menu" class="section">
+        <h1>Our Menu</h1>
+        <button onclick="loadMenu()">Load Menu</button>
+        <div id="menuData"></div>
+        
+    </div>
+
+    <!--OFFERS-->
+    <div id="offers" class="section">
+        <h1>Special Offers</h1>
+        <button onclick="showOffer()">Click for Offer</button>
+        
+        <h3 style="text-align: center;">Special Offers</h3> <br> 
+ 
+<ul>
+    
+    <li>Use Code:  <strong>WELCOME10</strong> - Get 10% Off on orders above Rs.1000</li> <br> <br>
+    <li>Use Code:  <strong>FRIED20</strong> - Get Rs.200 Off on Mixed Fried Rice</li> <br> <br>
+    <li>Use Code:  <strong>KOTTU15</strong> - Get 15% Off on any Kottu</li> <br> <br>
+    <li>Use Code:  <strong>FREEDEL</strong> - Free Delivery on orders above Rs.2000</li> <br> <br>
+</ul>
+<img src="poster.jpg" width="500">
+    </div>
+
+    <!--GALLERY-->
+    <div id="gallery" class="section">
+        <h1>Gallery</h1>
+
+        <section class="gallery">
+        <img src="Buger.jpg" width="200">
+        <img src= "fired rice.jpg"width="200">
+        <img src= "Kottu.jpg" width="200">
+        <img src= "OIP.jpg" width="200">
+        <img src= "pasta.jpg" width="200">
+        <img src= "pizza.jpg" width="200">
+        <img src="OIP (1).jpg" width="200">
+        <img src="OIP (2).jpg" width="200">
+        <img src="OIP (3).jpg" width="200">
+        <img src="OIP (4).jpg" width="200">
+        <img src="OIP (5).jpg" width="200">
+        <img src="OIP (6).jpg" width="200">
+        <img src="OIP (7).jpg" width="200">
+        <img src="OIP (8).jpg" with="200">
+        <img src="OIP (9).jpg" width="200">
+        <img src="OIP (10).jpg" width="200">
+        <img src="OIP (11).jpg" with="200">
+        <img src="OIP (12).jpg" width="200">
+        <img src="OIP (14).jpg" width="200">
+        <img src="OIP (15).jpg" width="200">
+
+
+    </div>
+
+    <!--CONTACT-->
+    <div id="contact"class="section">
+        <h1>Contact us</h1>
+
+        <h2>Booking Now</h2> <br>
+
+        <form methord="POST">
+            Name:  <input type="text"
+            name="name"> <br> <br>
+
+            Email:  <input type="text"
+            Email="name"> <br> <br>
+
+            Phone number: <input type ="text"
+            Phone number="name"> <br> <br>
+
+            Message:  <textarea
+            name="message"></textarea> <br> <br>
+
+          <input type="submit" value="send"> <br> <br>  
+
+          <img src="facebook.jpg" width="80px">
+          <img src="ins.jpg" width="80px">
+          <img src="tik tok.jpg" width="80px"> <br> <br> <br>
+
+          
+          
+          <?php
+// Handle contact form
+if (isset($_POST['name'])) {
+    $name = htmlspecialchars($_POST['name']);
+    $message = htmlspecialchars($_POST['message']);
+
+    echo "<script>
+        <footer>
+        alert('Thank you {$name}! Your message has been received.');
+
+        </footer>
+    </script>";
+}
+?>
+        </form>
+
+        
+    </div>
+
+    <!--Javascript-->
+    <script>
+        //Page navigation
+        function showPage(page){
+            $(".section").removeClass("active");
+            $("#"+ page) .addClass("active");
+        }
+
+        //Offer alert
+        function showOffer(){
+            alert("Special Discount Today!");
+        }
+
+       // AJAX menu
+function loadMenu(){
+    var menuHTML = `
+        <div style="text-align: left;">
+
+    <h2>Menu List</h2>
+
+    
+    
+
+<h3>Fired Rice</h3>
+<ul style="font-size: 20px;">
+
+    <ul>
+        <li>Vegetable .......... Rs.300</li> <br>
+        <li>Egg .......... Rs.400</li> <br>
+        <li>Fish .......... Rs.600</li> <br>
+        <li>Chicken .......... Rs.750</li> <br>
+        <li>Sea Food .......... Rs.900</li> <br>
+        <li>Mixed .......... Rs.1400</li> <br>
+    </ul>
+
+    <h3>Short Eats</h3>
+    <ul>
+        <li>Tea Bun .......... Rs.60</li> <br>
+        <li>Bread .......... Rs.65</li> <br>
+        <li>Pol Roti .......... Rs.40</li> <br>
+        <li>Fish Bun .......... Rs.90</li> <br>
+        <li>Jam Bun .......... Rs.50</li> <br>
+    </ul>
+
+    <h3>Kottu</h3>
+    <ul>
+        <li>Vegetable .......... Rs.500</li> <br>
+        <li>Egg .......... Rs.750</li> <br>
+        <li>Fish .......... Rs.850</li> <br>
+        <li>Chicken .......... Rs.900</li> <br>
+        <li>Mixed .......... Rs.1500</li> <br>
+    </ul>
+
+    <h3>Drinks</h3>
+    <ul>
+        <li>Tea .......... Rs.40</li> <br>
+        <li>Coffee .......... Rs.45</li> <br>
+        <li>Cold Drinks .......... Rs.50</li> <br>
+        <li>Milk .......... Rs.40</li> <br>
+    </ul>
+
+    <h3>Desserts</h3>
+    <ul>
+        <li>Ice Cream .......... Rs.45</li> <br>
+        <li>Curd .......... Rs.60</li> <br>
+        <li>Yoghurt .......... Rs.80</li> <br>
+    </ul>
+
+    <h3>Other Foods</h3>
+    <ul>
+        <li>Parata .......... Rs.60</li> <br>
+        <li>String Hoppers .......... Rs.400</li> <br>
+        <li>Hoppers .......... Rs.40</li> <br>
+        <li>Pasta .......... Rs.120</li> <br>
+    </ul>
+
+</div> <br> <br>
+
+
+    
+     
+    
+    `;
+    document.getElementById("menuData").innerHTML = menuHTML;
+}
+
+// jQuery animation
+$(document).ready(function(){
+    $(".banner").hide().fadeIn(2000);
+});
+        </script>
+ 
+ 
+
+</body>
+</html>
+
+
